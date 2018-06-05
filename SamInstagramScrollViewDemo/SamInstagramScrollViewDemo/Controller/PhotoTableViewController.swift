@@ -9,11 +9,17 @@
 
 import UIKit
 
+protocol PhotoTableViewControllerDelegate: class {
+    func tableViewDidScroll(_ tableView: PhotoTableViewController, translation: CGFloat)
+}
+
 class PhotoTableViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
 
     private let userInfoViewHeight: CGFloat = 200.0
+
+    weak var delegate: PhotoTableViewControllerDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,5 +67,12 @@ extension PhotoTableViewController: UITableViewDelegate, UITableViewDataSource {
             ) as! PhotoTableViewCell
 
         return tableViewCell
+    }
+
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+
+        let translation = scrollView.contentOffset.y + userInfoViewHeight
+
+        self.delegate?.tableViewDidScroll(self, translation: translation)
     }
 }
