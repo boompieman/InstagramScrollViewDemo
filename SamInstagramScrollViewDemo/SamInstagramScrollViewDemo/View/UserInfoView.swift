@@ -34,7 +34,6 @@ class UserInfoView: UIView {
     func updateProfileWith(name: String, image imageString: String) {
 
         nameLabel.text = "userName"
-        imageView.image = UIImage(named: "sticker")
 
     }
 

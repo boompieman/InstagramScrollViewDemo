@@ -18,6 +18,7 @@ class UserProfileViewController: UIViewController {
         super.viewDidLoad()
 
         childViewConfiguration()
+        
 
     }
 

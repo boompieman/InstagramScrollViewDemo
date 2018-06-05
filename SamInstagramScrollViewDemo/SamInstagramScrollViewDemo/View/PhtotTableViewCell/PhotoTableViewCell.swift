@@ -10,6 +10,7 @@ import UIKit
 
 class PhotoTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var numberLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

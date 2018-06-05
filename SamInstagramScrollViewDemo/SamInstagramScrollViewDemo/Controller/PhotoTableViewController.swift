@@ -38,7 +38,7 @@ class PhotoTableViewController: UIViewController {
 
         self.tableView.register(nib, forCellReuseIdentifier: String(describing: PhotoTableViewCell.self))
 
-        self.tableView.contentInset = UIEdgeInsetsMake(userInfoViewHeight, 0, 49, 0)
+        self.tableView.contentInset = UIEdgeInsetsMake(userInfoViewHeight, 0, 0, 0)
     }
 }
 
@@ -65,6 +65,8 @@ extension PhotoTableViewController: UITableViewDelegate, UITableViewDataSource {
             withIdentifier: String(describing: PhotoTableViewCell.self),
             for: indexPath
             ) as! PhotoTableViewCell
+
+        tableViewCell.numberLabel.text = String(indexPath.row)
 
         return tableViewCell
     }
