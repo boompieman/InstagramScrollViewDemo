@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9Mx-x9-D9n">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="dOf-zc-wXh">
+            <objects>
+                <navigationController id="9Mx-x9-D9n" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ggt-TV-prA">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="NyJ-tL-arV"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qBL-1q-KVy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-550" y="99"/>
+        </scene>
+        <!--User Profile View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="UserProfileViewController" customModule="SamInstagramScrollViewDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y3m-Pu-eon">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <connections>
+                                    <segue destination="myv-CY-XvW" kind="embed" id="aha-de-HGa"/>
+                                </connections>
+                            </containerView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BuA-Uu-VjJ" customClass="UserInfoView" customModule="SamInstagramScrollViewDemo" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="64" width="375" height="200"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile_sticker_placeholder01" translatesAutoresizingMaskIntoConstraints="NO" id="8Ll-tT-fsb">
+                                        <rect key="frame" x="147.5" y="60" width="80" height="80"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="80" id="Qj0-Vg-ISG"/>
+                                            <constraint firstAttribute="width" constant="80" id="w5J-aT-Vy6"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pzr-x6-Hp3">
+                                        <rect key="frame" x="137" y="170" width="100" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="NFj-qd-1u7"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="pzr-x6-Hp3" firstAttribute="top" secondItem="8Ll-tT-fsb" secondAttribute="bottom" constant="30" id="1qI-Ef-o17"/>
+                                    <constraint firstItem="8Ll-tT-fsb" firstAttribute="centerY" secondItem="BuA-Uu-VjJ" secondAttribute="centerY" id="EV9-gh-KEk"/>
+                                    <constraint firstItem="8Ll-tT-fsb" firstAttribute="centerX" secondItem="BuA-Uu-VjJ" secondAttribute="centerX" id="Kb6-oe-1u4"/>
+                                    <constraint firstItem="pzr-x6-Hp3" firstAttribute="centerX" secondItem="BuA-Uu-VjJ" secondAttribute="centerX" id="jn9-hY-QmR"/>
+                                    <constraint firstAttribute="height" constant="200" id="mEL-LG-ik9"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="imageView" destination="8Ll-tT-fsb" id="uL1-PA-M73"/>
+                                    <outlet property="nameLabel" destination="pzr-x6-Hp3" id="rEa-Ib-7kN"/>
+                                </connections>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="y3m-Pu-eon" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="0Rd-9S-dYd"/>
+                            <constraint firstItem="BuA-Uu-VjJ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Z7G-0g-Zdi"/>
+                            <constraint firstItem="y3m-Pu-eon" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="f17-gS-o6y"/>
+                            <constraint firstItem="BuA-Uu-VjJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="qHE-kh-Dne"/>
+                            <constraint firstItem="y3m-Pu-eon" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="sDA-SD-XVh"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="BuA-Uu-VjJ" secondAttribute="trailing" id="sfi-3T-nEc"/>
+                            <constraint firstAttribute="trailing" secondItem="y3m-Pu-eon" secondAttribute="trailing" id="yIh-QC-yve"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="dwx-3t-V7K"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="366" y="99"/>
+        </scene>
+        <!--Photo Table View Controller-->
+        <scene sceneID="RoM-AI-Rm0">
+            <objects>
+                <viewController id="myv-CY-XvW" customClass="PhotoTableViewController" customModule="SamInstagramScrollViewDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="T7r-MQ-0Fu">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QYK-ag-GaP">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="QYK-ag-GaP" firstAttribute="top" secondItem="T7r-MQ-0Fu" secondAttribute="top" id="F80-Vg-F1a"/>
+                            <constraint firstAttribute="trailing" secondItem="QYK-ag-GaP" secondAttribute="trailing" id="QBZ-2z-7aM"/>
+                            <constraint firstAttribute="bottom" secondItem="QYK-ag-GaP" secondAttribute="bottom" id="Y9d-lR-YcQ"/>
+                            <constraint firstItem="QYK-ag-GaP" firstAttribute="leading" secondItem="T7r-MQ-0Fu" secondAttribute="leading" id="utl-IT-a9q"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="QYK-ag-GaP" id="cGw-m2-xov"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PXW-8s-Bim" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1262" y="99"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="profile_sticker_placeholder01" width="36" height="36"/>
+    </resources>
+</document>
